@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "788885577389",
+    "project_id": "datravel-d297a",
+    "storage_bucket": "datravel-d297a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788885577389:android:5d98557731ca730fecf024",
+        "android_client_info": {
+          "package_name": "com.hwibin.da_travel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788885577389-cevnto1n199s250mc4sadjfn5i6lk1g9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL4d2kSIBbRJBrB7n0HAJpOOWUbetEejY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788885577389-cevnto1n199s250mc4sadjfn5i6lk1g9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
