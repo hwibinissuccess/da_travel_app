@@ -31,15 +31,7 @@ class _SignPage extends State<SignPage> {
     reference = _database?.reference().child('user');
   }
 
-  void makeDialog(String text) {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            content: Text(text),
-          );
-        });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -133,5 +125,14 @@ class _SignPage extends State<SignPage> {
         ),
       ),
     );
+  }
+  void makeDialog(String text) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text(text),
+          );
+        });
   }
 }

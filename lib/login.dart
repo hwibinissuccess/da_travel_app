@@ -53,15 +53,7 @@ class _LoginPageState extends State<LoginPage>
     super.dispose();
   }
 
-  void makeDialog(String text) {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            content: Text(text),
-          );
-        });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +61,7 @@ class _LoginPageState extends State<LoginPage>
       body: Container(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               AnimatedBuilder(
                 animation: _animationController!,
@@ -144,22 +137,15 @@ class _LoginPageState extends State<LoginPage>
                                         .child(_pwTextController!.value.text)
                                         .onChildAdded
                                         .listen((event) {
-                                      User user =
-                                          User.fromSnapshot(event.snapshot);
-                                      var bytes = utf8.encode(
-                                          _pwTextController!.value.text);
+                                      User user = User.fromSnapshot(event.snapshot.value);
+                                      var bytes = utf8.encode(_pwTextController!.value.text);
                                       var digest = sha1.convert(bytes);
                                       if (user.pw == digest.toString()) {
-                                        Navigator.of(context)
-                                            .pushReplacementNamed('/main',
-                                                arguments: _idTextController!
-                                                    .value.text);
+                                        Navigator.of(context).pushReplacementNamed('/main',
+                                            arguments: _idTextController!.value.text);
                                       } else {
                                         makeDialog('비밀번호가 틀립니다');
-                                      }
-                                    });
-                                  }
-                                });
+                                      }});}});
                               }
                             },
                             child: Text('로그인'))
@@ -170,10 +156,18 @@ class _LoginPageState extends State<LoginPage>
                 ),
               )
             ],
-            mainAxisAlignment: MainAxisAlignment.center,
           ),
         ),
       ),
     );
+  }
+  void makeDialog(String text) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text(text),
+          );
+        });
   }
 }
